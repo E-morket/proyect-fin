@@ -1,0 +1,70 @@
+.message {
+    margin: 15% ;
+    margin-top: 10%;
+    padding-right: 40px;
+    border-radius: 30px;
+    justify-content: space-around;
+    width: 70% !important;
+    height: 600px;
+    color: #ffff;
+    background-color: rgb(25, 164, 179);
+    box-sizing: 70% !important;
+    text-align: center;
+    
+}
+.message:before {
+    content: '';
+    margin: 15% ;
+    margin-top: 9% !important;
+    padding-right: 40px;
+    width: 68% !important;
+    justify-content: center;
+    height: 600px !important;
+    margin-top: 30px;
+    background: linear-gradient(45deg,  #002bff, #7a00ff);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(15px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px !important;
+}
+.message:active {
+    color: #000
+}
+
+.message:active:after {
+    background: transparent;
+}
+
+.message:hover:before {
+    opacity: 1;
+}
+
+.message:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0);
+    left: 0;
+    top: 0;
+    border-radius: 10px !important;
+}
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+@media screen and (max-width: 960px) {
+.message {
+    height: 650px;
+}
+}
